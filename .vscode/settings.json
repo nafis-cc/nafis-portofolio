@@ -1,0 +1,7 @@
+{
+  "path-intellisense.mappings": {
+    "~": "${workspaceFolder}/src"
+  },
+  "path-intellisense.extensionOnImport": true,
+  "path-intellisense.includeExtensions": [".js", ".jsx", ".ts", ".tsx", ".json", ".css", ".scss"]
+}

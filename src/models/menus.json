@@ -1,0 +1,29 @@
+
+[
+    {
+      "id": 1,
+      "title": "About",
+      "navlink": "/"
+    },
+    {
+      "id": 2,
+      "title": "Resume",
+      "navlink": "/resume"
+    },
+    {
+      "id": 3,
+      "title": "Portofolio",
+      "navlink": "/portofolio"
+    },
+    {
+      "id": 4,
+      "title": "Contact",
+      "navlink": "/contact"
+    },
+    {
+      "id": 5,
+      "title": "Edit Profile",
+      "navlink": "/edit"
+    }
+  ]
+  

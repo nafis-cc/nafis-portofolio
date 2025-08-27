@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "UAG University",
+        "logo": "https://member.aspikom.org/assets/img/1715936055_81b3c34b7eae05ea0081.png",
+        "link": "https://uag.ac.id/"
+    },
+    {
+        "id": 2,
+        "name": "Ministry of Finance",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/7/73/Logo_kementerian_keuangan_republik_indonesia.png",
+        "link": "https://www.kemenkeu.go.id/"
+    },
+    {
+        "id": 3,
+        "name": "KPP Mining",
+        "logo": "https://uccareer.id/assets/upload/company/thumbs/thumb300px-20220214-090222-0fdfc.png",
+        "link": "https://www.kppmining.com/"
+    }
+]

@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "Ministry of Finance, Indonesia",
+        "link": "https://www.kemenkeu.go.id/",
+        "location": "Jakarta Pusat, Indonesia",
+        "from": "Feb 2023",
+        "until": "Dec 2023",
+        "position": "Fullstack Developer"
+    },
+    {
+        "id": 2,
+        "name": "PT Kalimantan Prima Persada",
+        "link": "https://www.kppmining.com/",
+        "location": "Jakarta Timur, Indonesia",
+        "from": "Oct 2024",
+        "until": "Present",
+        "position": "Junior Programmer"
+    }
+]

@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "title": "Email",
+      "link": "mailto:m.nafis.2001@gmail.com",
+      "desc": "m.nafis.2001@gmail.com"
+    },
+    {
+      "id": 2,
+      "title": "Phone",
+      "link": "tel:+6282129690022",
+      "desc": "(+62) 82129690022"
+    },
+    {
+      "id": 3,
+      "title": "Media",
+      "link": "https://www.linkedin.com/in/nafiss",
+      "desc": "linkedin.com/in/nafiss"
+    },
+    {
+      "id": 4,
+      "title": "Location",
+      "link": "https://maps.app.goo.gl/FdeRn7SrfKHWgkRs5",
+      "desc": "Bandung Barat, IDN"
+    }
+  ]
+  

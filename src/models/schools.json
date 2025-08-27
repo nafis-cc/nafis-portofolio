@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "Fitrah Insani Highschool",
+        "link": "https://fithrahinsani.org/smait-fithrah-insani/",
+        "location": "Bandung Barat, Indonesia",
+        "from": "Jul 2016",
+        "until": "Jun 2019",
+        "study": "Natural Sciences"
+    },
+    {
+        "id": 2,
+        "name": "Ary Ginanjar University",
+        "link": "https://uag.ac.id/",
+        "location": "Jakarta Selatan, Indonesia",
+        "from": "Aug 2020",
+        "until": "Jul 2025",
+        "study": "Information Systems"
+    }
+]

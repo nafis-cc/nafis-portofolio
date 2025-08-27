@@ -1,0 +1,24 @@
+
+[
+    {
+      "id": 1,
+      "title": "Web design",
+      "description": "The most modern and high-quality design made at a professional level."
+    },
+    {
+      "id": 2,
+      "title": "Web development",
+      "description": "High-quality development of sites at the professional level."
+    },
+    {
+      "id": 3,
+      "title": "Mobile apps",
+      "description": "Professional development of applications for iOS and Android."
+    },
+    {
+      "id": 4,
+      "title": "Desktop apps",
+      "description": "Professional app development for Windows and Macintosh."
+    }
+  ]
+  

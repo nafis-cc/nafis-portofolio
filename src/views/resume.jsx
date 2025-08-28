@@ -3,7 +3,7 @@ import { HiMiniUserGroup } from "react-icons/hi2";
 import { RiFileDownloadFill } from "react-icons/ri";
 import { Timeline } from "~/components";
 import { schools, offices, groups } from "~/models";
-import { handleOpenResume } from '~/scripts/app';
+import { handleOpenResume } from "~/scripts/app";
 
 function Resume({ ICON_SIZE = 26 }) {
   return (
@@ -21,17 +21,20 @@ function Resume({ ICON_SIZE = 26 }) {
             <h3 className="h3">Experience</h3>
           </div>
           <ol className="timeline-list">
-            {offices.slice().reverse().map((item, index) => (
-              <Timeline
-                key={index}
-                name={item.name}
-                link={item.link}
-                location={item.location}
-                from={item.from}
-                until={item.until}
-                position={item.position}
-              />
-            ))}
+            {offices
+              .slice()
+              .reverse()
+              .map((item, index) => (
+                <Timeline
+                  key={index}
+                  name={item.name}
+                  link={item.link}
+                  location={item.location}
+                  from={item.from}
+                  until={item.until}
+                  position={item.position}
+                />
+              ))}
           </ol>
         </div>
 
@@ -43,17 +46,20 @@ function Resume({ ICON_SIZE = 26 }) {
             <h3 className="h3">Education</h3>
           </div>
           <ol className="timeline-list">
-            {schools.slice().reverse().map((item, index) => (
-              <Timeline
-                key={index}
-                name={item.name}
-                link={item.link}
-                location={item.location}
-                from={item.from}
-                until={item.until}
-                study={item.study}
-              />
-            ))}
+            {schools
+              .slice()
+              .reverse()
+              .map((item, index) => (
+                <Timeline
+                  key={index}
+                  name={item.name}
+                  link={item.link}
+                  location={item.location}
+                  from={item.from}
+                  until={item.until}
+                  study={item.study}
+                />
+              ))}
           </ol>
         </div>
 
@@ -65,17 +71,20 @@ function Resume({ ICON_SIZE = 26 }) {
             <h3 className="h3">Organization</h3>
           </div>
           <ol className="timeline-list">
-            {groups.slice().reverse().map((item, index) => (
-              <Timeline
-                key={index}
-                name={item.name}
-                link={item.link}
-                location={item.location}
-                from={item.from}
-                until={item.until}
-                position={item.position}
-              />
-            ))}
+            {groups
+              .slice()
+              .reverse()
+              .map((item, index) => (
+                <Timeline
+                  key={index}
+                  name={item.name}
+                  link={item.link}
+                  location={item.location}
+                  from={item.from}
+                  until={item.until}
+                  position={item.position}
+                />
+              ))}
           </ol>
         </div>
 

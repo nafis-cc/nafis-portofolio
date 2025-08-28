@@ -75,7 +75,6 @@ function Project() {
           <li key={index} className="filter-item">
             <button
               onClick={() => handleFilter(item)}
-              data-filter-btn
               className={item === selectedCategory ? "active" : ""}
             >
               {item}
@@ -91,7 +90,6 @@ function Project() {
             <li
               key={index}
               className="blog-post-item"
-              data-filter-item
               data-category={item.category}
             >
               <a href={item.link}>

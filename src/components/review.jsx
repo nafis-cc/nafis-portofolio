@@ -1,4 +1,5 @@
 const Review = ({name, avatar, testimonial}) => {
+
   return (
     <li className="testimonials-item">
       <div className="content-card">

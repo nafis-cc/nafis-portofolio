@@ -1,66 +1,56 @@
 [
     {
       "id": 1,
-      "title": "Finance",
-      "category": "Web development",
-      "image": "/images/project-1.jpg",
-      "link": "https://www.nafis.co/"
+      "title": "UI Design Nafis Portofolio",
+      "category": "Design",
+      "date": "Feb 23, 2022",
+      "image": "https://picsum.photos/id/1/1280/720",
+      "link": "https://www.nafis.cc/",
+      "description": "Veritatis et quasi architecto beatae vitae dicta sunt, explicabo."
     },
     {
       "id": 2,
-      "title": "Orizon",
-      "category": "Web development",
-      "image": "/images/project-2.png",
-      "link": "https://www.nafis.co/"
+      "title": "Brand Design Alussena",
+      "category": "Design",
+      "date": "Feb 23, 2022",
+      "image": "https://picsum.photos/id/2/1280/720",
+      "link": "https://www.nafis.cc/",
+      "description": "Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi."
     },
     {
       "id": 3,
-      "title": "Fundo",
-      "category": "Web design",
-      "image": "/images/project-3.jpg",
-      "link": "https://www.nafis.co/"
+      "title": "Chairoon Website",
+      "category": "Website",
+      "date": "Feb 23, 2022",
+      "image": "https://picsum.photos/id/3/1280/720",
+      "link": "https://www.nafis.cc/",
+      "description": "Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis suscipit."
     },
     {
       "id": 4,
-      "title": "Brawlhalla",
-      "category": "Applications",
-      "image": "/images/project-3.jpg",
-      "link": "https://www.nafis.co/"
+      "title": "Alussena Website",
+      "category": "Website",
+      "date": "Feb 23, 2022",
+      "image": "https://picsum.photos/id/4/1280/720",
+      "link": "https://www.nafis.cc/",
+      "description": "Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi."
     },
     {
       "id": 5,
-      "title": "DSM.",
-      "category": "Web design",
-      "image": "/images/project-5.png",
-      "link": "https://www.nafis.co/"
+      "title": "Nexsciv App",
+      "category": "Mobile",
+      "date": "Feb 23, 2022",
+      "image": "https://picsum.photos/id/5/1280/720",
+      "link": "https://www.nafis.cc/",
+      "description": "Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     },
     {
       "id": 6,
-      "title": "MetaSpark",
-      "category": "Web design",
-      "image": "/images/project-6.png",
-      "link": "https://www.nafis.co/"
-    },
-    {
-      "id": 7,
-      "title": "Summary",
-      "category": "Web development",
-      "image": "/images/project-7.png",
-      "link": "https://www.nafis.co/"
-    },
-    {
-      "id": 8,
-      "title": "Task Manager",
-      "category": "Applications",
-      "image": "/images/project-8.jpg",
-      "link": "https://www.nafis.co/"
-    },
-    {
-      "id": 9,
-      "title": "Arrival",
-      "category": "Web development",
-      "image": "/images/project-9.png",
-      "link": "https://www.nafis.co/"
+      "title": "Indokorup Game",
+      "category": "Desktop",
+      "date": "Feb 23, 2022",
+      "image": "https://picsum.photos/id/6/1280/720",
+      "link": "https://www.nafis.cc/",
+      "description": "Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum."
     }
   ]
-  

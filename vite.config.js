@@ -14,5 +14,5 @@ export default defineConfig({
       '~': resolve(__dirname, './src'),
     },
   },
-  // base: 'https://www.nafis.cc/',
+  //base: '/nafis-portofolio/',
 })

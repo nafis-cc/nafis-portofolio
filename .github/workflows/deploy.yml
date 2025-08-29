@@ -1,9 +1,9 @@
-name: nafis-portofolio
+name: Deploy Nafis Portfolio
 
 on:
   push:
     branches:
-      - prod
+      - prod  # branch utama untuk deploy
 
 permissions:
   contents: read
@@ -15,17 +15,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 1. Checkout code
       - name: Checkout code
         uses: actions/checkout@v4
 
+      # 2. Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
+      # 3. Install dependencies
       - name: Install dependencies
         run: npm ci
 
+      # 4. Build project (Vite + React)
       - name: Build project
         run: npm run build
         env:
@@ -33,26 +37,29 @@ jobs:
           VITE_EMAILJS_TEMPLATE_ID: ${{ secrets.VITE_EMAILJS_TEMPLATE_ID }}
           VITE_EMAILJS_PUBLIC_KEY: ${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}
 
+      # 5. Upload build artifact (folder dist)
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
+          name: github-pages
 
   deploy:
+    needs: build
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    runs-on: ubuntu-latest
-    needs: build
 
     steps:
+      # 1. Download artifact yang sudah di-build
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
           name: github-pages
-          path: .
+          path: ./   # letakkan di root agar deploy-pages pakai index.html build
 
+      # 2. Deploy ke GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+

@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react'
 import { fileURLToPath } from 'node:url'
 import { dirname, resolve } from 'node:path'
 
+// Ambil path absolut dari direktori saat ini
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
@@ -11,8 +12,15 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '~': resolve(__dirname, './src'),
+      '~': resolve(__dirname, './src'), // alias ~/ → ./src
     },
   },
+  // Base path untuk deployment di GitHub Pages root domain
+  // Jika pakai custom domain di root, tetap '/'.
+  // Jika pakai repo pages (username.github.io/repo), ubah ke '/repo/'
   base: '/',
+  build: {
+    outDir: 'dist',       // folder output build (default Vite)
+    emptyOutDir: true,    // bersihkan dist sebelum build
+  },
 })

@@ -1,5 +1,6 @@
 import services from "~/models/services.json";
 import clients from "~/models/clients.json";
+import reviews from "~/models/reviews.json";
 import { Service, Review, Client } from "~/components";
 import { useEffect, useState } from "react";
 
@@ -7,12 +8,7 @@ function About() {
   const [testimonials, setTestimonials] = useState([]);
 
   useEffect(() => {
-    fetch("/src/models/reviews.json")
-      .then((res) => res.json())
-      .then((data) => {
-        //console.log(data)
-        setTestimonials(data);
-      });
+    setTestimonials(reviews);
   }, []);
 
   return (

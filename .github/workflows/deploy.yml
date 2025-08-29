@@ -3,7 +3,7 @@ name: Deploy Nafis Portfolio
 on:
   push:
     branches:
-      - prod   # ganti sesuai branch utama yang ingin deploy
+      - prod
 
 permissions:
   contents: read
@@ -33,11 +33,12 @@ jobs:
           VITE_EMAILJS_TEMPLATE_ID: ${{ secrets.VITE_EMAILJS_TEMPLATE_ID }}
           VITE_EMAILJS_PUBLIC_KEY: ${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}
 
+      # Upload artifact
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
-          name: github-pages   # penting, sama dengan download-artifact
+          name: github-pages
 
   deploy:
     runs-on: ubuntu-latest
@@ -46,12 +47,14 @@ jobs:
       name: github-pages
 
     steps:
+      # Download artifact ke root
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
           name: github-pages
-          path: .   # deploy index.html + assets ke root repo
+          path: ./  # pastikan ini root repo
 
+      # Deploy
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

@@ -2,4 +2,3 @@ export { default as Resume } from "./resume";
 export { default as About } from "./about";
 export { default as Project } from "./project";
 export { default as Contact } from "./contact";
-export { default as Edit } from "./edit";

@@ -14,7 +14,7 @@ function Project() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedOther, setSelectedOther] = useState(null);
 
-  const postsPerPage = 2;
+  const postsPerPage = 4;
 
   // Hitung jumlah category lalu urutkan
   const categoryCount = projects.reduce((acc, item) => {

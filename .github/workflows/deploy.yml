@@ -3,7 +3,7 @@ name: nafis-portofolio
 on:
   push:
     branches:
-      - prod   # branch utama untuk deploy
+      - prod
 
 permissions:
   contents: read
@@ -36,7 +36,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist   # folder hasil build (Vite = dist, CRA = build)
+          path: ./dist
 
   deploy:
     environment:
@@ -47,6 +47,12 @@ jobs:
     needs: build
 
     steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: github-pages
+          path: .
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

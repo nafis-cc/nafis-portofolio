@@ -6,7 +6,7 @@ import contacts from "~/models/contacts.json";
 import { handleOpenLinkedin } from "~/scripts/app";
 import { initSidebarToggle } from "~/scripts/app";
 
-const Profile = new URL("/images/Nafis.jpg", import.meta.url).href;
+const Profile = new URL("/images/nafis.jpg", import.meta.url).href;
 
 // simpan komponen, bukan elemen
 const iconMap = {

@@ -1,9 +1,9 @@
-name: nafis-portofolio
+name: Deploy Nafis Portfolio
 
 on:
   push:
     branches:
-      - prod
+      - prod   # ganti sesuai branch utama yang ingin deploy
 
 permissions:
   contents: read
@@ -37,21 +37,20 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
+          name: github-pages   # penting, sama dengan download-artifact
 
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
     runs-on: ubuntu-latest
     needs: build
+    environment:
+      name: github-pages
 
     steps:
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
           name: github-pages
-          path: .
+          path: .   # deploy index.html + assets ke root repo
 
       - name: Deploy to GitHub Pages
         id: deployment

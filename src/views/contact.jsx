@@ -1,6 +1,6 @@
 import { RiSendPlaneFill } from "react-icons/ri";
 import { useEffect, useRef } from "react";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 import { initContactFormValidation } from "~/scripts/app";
 
 function Contact() {

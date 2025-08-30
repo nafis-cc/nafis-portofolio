@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BsFillMortarboardFill, BsBriefcaseFill } from "react-icons/bs";
 import { HiMiniUserGroup } from "react-icons/hi2";
 import { RiFileDownloadFill } from "react-icons/ri";
-import { FaChevronCircleUp, FaChevronCircleDown } from "react-icons/fa"; 
+import { FaChevronCircleUp, FaChevronCircleDown } from "react-icons/fa";
+import { HiPresentationChartLine } from "react-icons/hi"; 
 import { Timeline } from "~/components";
-import { schools, offices, groups } from "~/models";
+import { schools, offices, groups, learns } from "~/models";
 import { handleOpenResume } from "~/scripts/app";
 
 function Resume({ ICON_SIZE = 26 }) {
@@ -12,11 +13,26 @@ function Resume({ ICON_SIZE = 26 }) {
   const [showAllSchools, setShowAllSchools] = useState(false);
   const [showAllOffices, setShowAllOffices] = useState(false);
   const [showAllGroups, setShowAllGroups] = useState(false);
+  const [showAllLearns, setShowAllLearns] = useState(false);
+
+  const [reversedSchools, setReversedSchools] = useState([]);
+  const [reversedOffices, setReversedOffices] = useState([]);
+  const [reversedGroups, setReversedGroups] = useState([]);
+  const [reversedLearns, setReversedLearns] = useState([]);
+
+  // Membalikkan urutan data ketika komponen pertama kali dimuat
+  useEffect(() => {
+    setReversedSchools([...schools].reverse());
+    setReversedOffices([...offices].reverse());
+    setReversedGroups([...groups].reverse());
+    setReversedLearns([...learns].reverse());
+  }, []);
 
   const handleShowAll = (type) => {
     if (type === "schools") setShowAllSchools((prev) => !prev);
     if (type === "offices") setShowAllOffices((prev) => !prev);
     if (type === "groups") setShowAllGroups((prev) => !prev);
+    if (type === "learns") setShowAllLearns((prev) => !prev);
   };
 
   // Fungsi menambahkan item discover/tutup tanpa mengubah data asli
@@ -37,11 +53,11 @@ function Resume({ ICON_SIZE = 26 }) {
   };
 
   // Render timeline agar lebih DRY
-  const renderTimeline = (items, showAll, type, extraProps = {}) => {
+  const renderTimeline = (items, showAll, type) => {
     const listWithDiscover = addDiscoverMore(items, showAll);
     const sliceLength = showAll ? listWithDiscover.length : 4;
 
-    return listWithDiscover.slice(0, sliceLength).reverse().map((item, index) =>
+    return listWithDiscover.slice(0, sliceLength).map((item, index) =>
       item.isDiscoverMore ? (
         <li
           key={`discover-${type}-${index}`}
@@ -53,21 +69,22 @@ function Resume({ ICON_SIZE = 26 }) {
             {showAll ? "Close, Just Discover Less" : "And discover more"}
           </h4>
           {showAll ? (
-            <FaChevronCircleUp size={20} className="sidebar-icon" /> // icon untuk close
+            <FaChevronCircleUp size={20} className="sidebar-icon" />
           ) : (
-            <FaChevronCircleDown size={20} className="sidebar-icon" /> // icon untuk discover more
+            <FaChevronCircleDown size={20} className="sidebar-icon" />
           )}
         </li>
       ) : (
         <li className="timeline-item" key={`${type}-${index}`}>
           <Timeline
-            id= {index+1}
+            id={index + 1}
             name={item.name}
             link={item.link}
             location={item.location}
             from={item.from}
             until={item.until}
-            {...extraProps}
+            study={type === "schools" || type === "learns" ? item.study : undefined}  // Menambahkan study jika type "schools" atau "learns"
+            position={type === "offices" || type === "groups" ? item.position : undefined}  // Menambahkan position jika type "offices" atau "groups"
           />
         </li>
       )
@@ -89,7 +106,7 @@ function Resume({ ICON_SIZE = 26 }) {
           <h3 className="h3">Experience</h3>
         </div>
         <ol className="timeline-list">
-          {renderTimeline(offices, showAllOffices, "offices", { position: true })}
+          {renderTimeline(reversedOffices, showAllOffices, "offices")}
         </ol>
       </div>
 
@@ -102,7 +119,7 @@ function Resume({ ICON_SIZE = 26 }) {
           <h3 className="h3">Education</h3>
         </div>
         <ol className="timeline-list">
-          {renderTimeline(schools, showAllSchools, "schools", { study: true })}
+          {renderTimeline(reversedSchools, showAllSchools, "schools")}
         </ol>
       </div>
 
@@ -115,7 +132,20 @@ function Resume({ ICON_SIZE = 26 }) {
           <h3 className="h3">Organization</h3>
         </div>
         <ol className="timeline-list">
-          {renderTimeline(groups, showAllGroups, "groups", { position: true })}
+          {renderTimeline(reversedGroups, showAllGroups, "groups")}
+        </ol>
+      </div>
+
+      {/* Bootcamp */}
+      <div className="timeline">
+        <div className="title-wrapper">
+          <div className="icon-box">
+            <HiPresentationChartLine size={ICON_SIZE} />
+          </div>
+          <h3 className="h3">Bootcamp</h3>
+        </div>
+        <ol className="timeline-list">
+          {renderTimeline(reversedLearns, showAllLearns, "learns")}
         </ol>
       </div>
 

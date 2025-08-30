@@ -25,6 +25,10 @@
         "reveal": "always",
         "panel": "dedicated"
       },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
     }
   ]
 }

@@ -15,6 +15,11 @@ export default defineConfig({
       '~': resolve(__dirname, './src'), // alias ~/ → ./src
     },
   },
+  server: {
+    host: '0.0.0.0',  // Memungkinkan akses dari IP lokal
+    port: 3000,       // Anda bisa ganti port jika ingin
+    strictPort: true, // Memastikan server hanya berjalan di port ini
+  },
   // Base path untuk deployment di GitHub Pages root domain
   // Jika pakai custom domain di root, tetap '/'.
   // Jika pakai repo pages (username.github.io/repo), ubah ke '/repo/'

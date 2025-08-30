@@ -8,7 +8,7 @@
             "name": "Launch Edge",
             "request": "launch",
             "type": "msedge",
-            "url": "http://localhost:5173",
+            "url": "http://192.168.100.72:3000/",
             "webRoot": "${workspaceFolder}/src",
             "preLaunchTask": "npm: dev"
         },
@@ -17,7 +17,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "url": "http://localhost:5173",
+            "url": "http://192.168.100.72:3000/",
             "webRoot": "${workspaceFolder}/src",
             "preLaunchTask": "npm: dev"
         }

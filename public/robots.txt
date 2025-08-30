@@ -2,5 +2,5 @@ User-agent: *
 Allow: /
 Allow: /dist/
 Allow: /public/
-Disallow: /sitemap_index
+Allow: /sitemap_index.xml
 Sitemap: https://www.nafis.cc/sitemap_index.xml

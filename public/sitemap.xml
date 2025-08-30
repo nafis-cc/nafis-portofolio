@@ -1,53 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-   <url>
-
-      <loc>https://nafis.cc/</loc>
-
-      <lastmod>2025-08-30</lastmod>
-
-      <changefreq>daily</changefreq>
-
-      <priority>1.0</priority>
-
-   </url>
-
-   <url>
-
-      <loc>https://nafis.cc/resume</loc>
-
-      <lastmod>2025-08-30</lastmod>
-
-      <changefreq>daily</changefreq>
-
-      <priority>0.8</priority>
-
-   </url>
-
-   <url>
-
-      <loc>https://nafis.cc/portofolio</loc>
-
-      <lastmod>2025-08-30</lastmod>
-
-      <changefreq>daily</changefreq>
-
-      <priority>0.6</priority>
-
-   </url>
-
-   <url>
-
-      <loc>https://nafis.cc/contact</loc>
-
-      <lastmod>2025-08-30</lastmod>
-
-      <changefreq>daily</changefreq>
-
-      <priority>0.4</priority>
-
-   </url>
-
+  <url>
+    <loc>https://www.nafis.cc/</loc>
+    <priority>1.0</priority>
+    <changefreq>daily</changefreq>
+    <lastmod>2025-08-30</lastmod>
+  </url>
+  <url>
+    <loc>https://www.nafis.cc/resume</loc>
+    <priority>1.0</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2025-08-30</lastmod>
+  </url>
+  <url>
+    <loc>https://www.nafis.cc/portfolio</loc>
+    <priority>1.0</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2025-08-30</lastmod>
+  </url>
+  <url>
+    <loc>https://www.nafis.cc/contact</loc>
+    <priority>0.5</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2025-08-30</lastmod>
+  </url>
 </urlset>

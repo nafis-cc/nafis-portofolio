@@ -1,3 +1,2 @@
-User-agent: *
-Allow: /
-Sitemap: https://www.nafis.cc/sitemap.xml
+User-agent: Googlebot
+Allow: /sitemap.xml

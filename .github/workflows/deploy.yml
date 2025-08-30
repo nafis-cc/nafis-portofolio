@@ -56,10 +56,9 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: github-pages
-          path: ./   # letakkan di root agar deploy-pages pakai index.html build
+          path: ./dist   # letakkan di folder dist agar deploy-pages tahu di mana index.html berada
 
       # 2. Deploy ke GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-

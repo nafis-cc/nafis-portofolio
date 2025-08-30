@@ -3,5 +3,4 @@ Allow: /
 Allow: /dist/
 Allow: /public/
 Allow: /sitemap_index.xml
-Disallow: /no-touchy
 Sitemap: https://www.nafis.cc/sitemap_index.xml

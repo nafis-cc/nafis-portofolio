@@ -4,18 +4,24 @@ on:
   push:
     branches:
       - prod  # branch utama untuk deploy
+  workflow_dispatch: # bisa jalan manual juga
 
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# Hanya 1 deploy yang bisa jalan dalam waktu bersamaan
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout code
+      # 1. Checkout repo
       - name: Checkout code
         uses: actions/checkout@v4
 
@@ -24,6 +30,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: npm
 
       # 3. Install dependencies
       - name: Install dependencies
@@ -37,26 +44,27 @@ jobs:
           VITE_EMAILJS_TEMPLATE_ID: ${{ secrets.VITE_EMAILJS_TEMPLATE_ID }}
           VITE_EMAILJS_PUBLIC_KEY: ${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}
 
-      # 5. Upload build artifact (folder dist)
+      # 5. Tambahkan CNAME untuk custom domain
+      - name: Add CNAME file
+        run: echo "www.nafis.cc" > ./dist/CNAME
+
+      # 6. Upload dist sebagai artifact untuk deploy
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
-          name: github-pages
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      # 1. Download artifact yang sudah di-build
-      - name: Download artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: github-pages
-          path: ./dist   # letakkan di folder dist agar deploy-pages tahu di mana index.html berada
+      # 1. Setup Pages
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
 
       # 2. Deploy ke GitHub Pages
       - name: Deploy to GitHub Pages

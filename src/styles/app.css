@@ -202,8 +202,8 @@ main {
   min-width: 259px;
 }
 
-.content-section {
-  margin-bottom: 100px;
+.main-content {
+  padding-bottom: 50px;
 }
 
 /*-----------------------------------*\

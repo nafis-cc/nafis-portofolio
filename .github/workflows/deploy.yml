@@ -3,15 +3,14 @@ name: Deploy Nafis Portfolio
 on:
   push:
     branches:
-      - prod  # branch utama untuk deploy
-  workflow_dispatch: # bisa jalan manual juga
+      - prod
+  workflow_dispatch:
 
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Hanya 1 deploy yang bisa jalan dalam waktu bersamaan
 concurrency:
   group: "pages"
   cancel-in-progress: true
@@ -21,33 +20,32 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout code
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 2. Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      # 3. Install dependencies
       - name: Install dependencies
         run: npm ci
 
-      # 4. Build project (Vite + React)
       - name: Build project
         run: npm run build
         env:
           VITE_EMAILJS_SERVICE_ID: ${{ secrets.VITE_EMAILJS_SERVICE_ID }}
           VITE_EMAILJS_TEMPLATE_ID: ${{ secrets.VITE_EMAILJS_TEMPLATE_ID }}
           VITE_EMAILJS_PUBLIC_KEY: ${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}
-  
-      # 5. Tambahkan CNAME untuk custom domain
+
+      # Tambahkan CNAME
       - name: Add CNAME file
         run: echo "www.nafis.cc" > ./dist/CNAME
 
-      # 5. Upload build artifact (folder dist)
+      # Tambahkan 404.html fallback
+      - name: Add 404.html
+        run: cp ./dist/index.html ./dist/404.html
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -61,14 +59,12 @@ jobs:
       name: github-pages
 
     steps:
-      # 1. Download artifact yang sudah di-build
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
           name: github-pages
-          path: ./dist   # letakkan di folder dist agar deploy-pages tahu di mana index.html berada
+          path: ./dist
 
-      # 2. Deploy ke GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

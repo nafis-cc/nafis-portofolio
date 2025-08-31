@@ -16,9 +16,9 @@ export default defineConfig({
     },
   },
   // server: {
-  //   host: '0.0.0.0',  // Memungkinkan akses dari IP lokal
-  //   port: 3000,       // Anda bisa ganti port jika ingin
-  //   strictPort: true, // Memastikan server hanya berjalan di port ini
+  //   host: '0.0.0.0',  // Memungkinkan akses global dari IP lokal
+  //   port: 3000,       
+  //   strictPort: true, 
   // },
   base: '/',
   build: {

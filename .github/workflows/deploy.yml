@@ -52,8 +52,6 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
-          name: github-pages
-          retention-days: 90
 
   deploy:
     if: github.ref == 'refs/heads/prod'
@@ -61,14 +59,9 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: github-pages
-          path: ./dist
-
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

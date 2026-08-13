@@ -136,13 +136,10 @@ function Resume({ ICON_SIZE = 26 }) {
         <ol className="timeline-list">{renderTimeline(reversedLearns, showAllLearns, "learns")}</ol>
       </div>
 
-      {/* Download Resume */}
-      <div className="timeline">
-        <button className="btn-resume" onClick={handleOpenResume}>
-          <RiFileDownloadFill size={ICON_SIZE} />
-          <h4 className="h4">Download Resume</h4>
-        </button>
-      </div>
+      <button className="btn-resume" onClick={handleOpenResume}>
+        <RiFileDownloadFill size={ICON_SIZE} />
+        <h4 className="h4">Download Resume</h4>
+      </button>
     </section>
   );
 }

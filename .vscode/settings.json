@@ -3,5 +3,6 @@
     "~": "${workspaceFolder}/src"
   },
   "path-intellisense.extensionOnImport": true,
-  "path-intellisense.includeExtensions": [".js", ".jsx", ".ts", ".tsx", ".json", ".css", ".scss"]
+  "path-intellisense.includeExtensions": [".js", ".jsx", ".ts", ".tsx", ".json", ".css", ".scss"],
+  "xml.downloadExternalResources.enabled": true
 }

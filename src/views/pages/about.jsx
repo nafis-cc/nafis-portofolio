@@ -1,16 +1,9 @@
 import services from "~/models/services.json";
 import clients from "~/models/clients.json";
 import reviews from "~/models/reviews.json";
-import { Service, Review, Client } from "~/components";
-import { useEffect, useState } from "react";
+import { Service, Review, Client } from "~/views/shared/components";
 
 function About() {
-  const [testimonials, setTestimonials] = useState([]);
-
-  useEffect(() => {
-    setTestimonials(reviews);
-  }, []);
-
   return (
     <>
       <section className="about active">
@@ -50,7 +43,7 @@ function About() {
           <section className="testimonials">
             <h3 className="h3 testimonials-title">What they said</h3>
             <ul className="testimonials-list has-scrollbar">
-              {testimonials.map((item, index) => (
+              {reviews.map((item, index) => (
                 <Review
                   key={index}
                   name={item.name}
@@ -64,9 +57,12 @@ function About() {
           <section className="clients">
             <h3 className="h3 clients-title">My Clients</h3>
             <ul className="clients-list has-scrollbar">
-              {clients.slice().reverse().map((item, index) => (
-                <Client key={index} name={item.name} logo={item.logo} link={item.link} />
-              ))}
+              {clients
+                .slice()
+                .reverse()
+                .map((item, index) => (
+                  <Client key={index} name={item.name} logo={item.logo} link={item.link} />
+                ))}
             </ul>
           </section>
         </header>

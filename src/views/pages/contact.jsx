@@ -9,8 +9,6 @@ function Contact() {
   const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
   const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-  console.log(serviceId, templateId, publicKey);
-
   useEffect(() => {
     const cleanup = initContactFormValidation();
     return cleanup;
@@ -22,12 +20,7 @@ function Contact() {
     e.preventDefault();
 
     try {
-      await emailjs.sendForm(
-        serviceId, // ganti dari dashboard EmailJS
-        templateId, // ganti dari dashboard EmailJS
-        form.current,
-        publicKey // ganti dari dashboard EmailJS
-      );
+      await emailjs.sendForm(serviceId, templateId, form.current, publicKey);
       alert("Message sent successfully!");
       form.current.reset(); // reset form setelah kirim
     } catch (error) {

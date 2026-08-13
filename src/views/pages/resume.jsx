@@ -1,32 +1,23 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { BsFillMortarboardFill, BsBriefcaseFill } from "react-icons/bs";
 import { HiMiniUserGroup } from "react-icons/hi2";
 import { RiFileDownloadFill } from "react-icons/ri";
 import { FaChevronCircleUp, FaChevronCircleDown } from "react-icons/fa";
-import { HiPresentationChartLine } from "react-icons/hi"; 
-import { Timeline } from "~/components";
+import { HiPresentationChartLine } from "react-icons/hi";
+import { Timeline } from "~/views/shared/components";
 import { schools, offices, groups, learns } from "~/models";
 import { handleOpenResume } from "~/scripts/app";
 
+const reversedSchools = [...schools].reverse();
+const reversedOffices = [...offices].reverse();
+const reversedGroups = [...groups].reverse();
+const reversedLearns = [...learns].reverse();
+
 function Resume({ ICON_SIZE = 26 }) {
-  // State untuk menampilkan semua item
   const [showAllSchools, setShowAllSchools] = useState(false);
   const [showAllOffices, setShowAllOffices] = useState(false);
   const [showAllGroups, setShowAllGroups] = useState(false);
   const [showAllLearns, setShowAllLearns] = useState(false);
-
-  const [reversedSchools, setReversedSchools] = useState([]);
-  const [reversedOffices, setReversedOffices] = useState([]);
-  const [reversedGroups, setReversedGroups] = useState([]);
-  const [reversedLearns, setReversedLearns] = useState([]);
-
-  // Membalikkan urutan data ketika komponen pertama kali dimuat
-  useEffect(() => {
-    setReversedSchools([...schools].reverse());
-    setReversedOffices([...offices].reverse());
-    setReversedGroups([...groups].reverse());
-    setReversedLearns([...learns].reverse());
-  }, []);
 
   const handleShowAll = (type) => {
     if (type === "schools") setShowAllSchools((prev) => !prev);
@@ -83,8 +74,8 @@ function Resume({ ICON_SIZE = 26 }) {
             location={item.location}
             from={item.from}
             until={item.until}
-            study={type === "schools" || type === "learns" ? item.study : undefined}  // Menambahkan study jika type "schools" atau "learns"
-            position={type === "offices" || type === "groups" ? item.position : undefined}  // Menambahkan position jika type "offices" atau "groups"
+            study={type === "schools" || type === "learns" ? item.study : undefined} // Menambahkan study jika type "schools" atau "learns"
+            position={type === "offices" || type === "groups" ? item.position : undefined} // Menambahkan position jika type "offices" atau "groups"
           />
         </li>
       )
@@ -131,9 +122,7 @@ function Resume({ ICON_SIZE = 26 }) {
           </div>
           <h3 className="h3">Organization</h3>
         </div>
-        <ol className="timeline-list">
-          {renderTimeline(reversedGroups, showAllGroups, "groups")}
-        </ol>
+        <ol className="timeline-list">{renderTimeline(reversedGroups, showAllGroups, "groups")}</ol>
       </div>
 
       {/* Bootcamp */}
@@ -144,9 +133,7 @@ function Resume({ ICON_SIZE = 26 }) {
           </div>
           <h3 className="h3">Bootcamp</h3>
         </div>
-        <ol className="timeline-list">
-          {renderTimeline(reversedLearns, showAllLearns, "learns")}
-        </ol>
+        <ol className="timeline-list">{renderTimeline(reversedLearns, showAllLearns, "learns")}</ol>
       </div>
 
       {/* Download Resume */}

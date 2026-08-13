@@ -180,13 +180,14 @@ function Project() {
           <div
             className="modal-content"
             style={{
-              background: "#fff",
+              background: "rgb(11 17 32)",
+              border: "1px solid hsl(0, 0%, 22%)",
               padding: "20px",
-              borderRadius: "8px",
+              borderRadius: "16px",
               width: "300px",
               maxHeight: "400px",
               overflow: "hidden",
-              boxShadow: "0 2px 10px rgba(0,0,0,0.3)",
+              boxShadow: "0 24px 80px hsla(0, 0%, 0%, 0.5)",
               position: "relative",
             }}
           >
@@ -200,27 +201,35 @@ function Project() {
                 background: "transparent",
                 border: "none",
                 cursor: "pointer",
-                fontSize: "24px",
-                color: "#666",
+                color: "hsl(0, 0%, 84%)",
               }}
             >
               <IoCloseCircleOutline size={28} />
             </button>
 
-            <h3 style={{ marginBottom: "10px" }}>Choose Category</h3>
+            <h3 style={{ marginBottom: "10px", color: "hsl(0, 0%, 98%)", fontSize: "16px" }}>Choose Category</h3>
             <input
               type="text"
               placeholder="Search category..."
-              style={{ width: "100%", padding: "8px", marginBottom: "10px" }}
+              style={{
+                width: "100%",
+                padding: "8px 12px",
+                marginBottom: "10px",
+                background: "hsl(240, 1%, 17%)",
+                border: "1px solid hsl(0, 0%, 22%)",
+                borderRadius: "8px",
+                color: "hsl(0, 0%, 84%)",
+                fontSize: "13px",
+              }}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
             <ul
               style={{
-                maxHeight: "150px", // max 3-4 item terlihat, lalu scroll
+                maxHeight: "150px",
                 overflowY: "auto",
-                border: "1px solid #ccc",
-                borderRadius: "4px",
+                border: "1px solid hsl(0, 0%, 22%)",
+                borderRadius: "8px",
                 marginBottom: "10px",
               }}
             >
@@ -230,17 +239,22 @@ function Project() {
                   <li
                     key={i}
                     style={{
-                      padding: "6px 10px",
+                      padding: "8px 12px",
                       cursor: "pointer",
-                      borderBottom: "1px solid #eee",
+                      borderBottom: "1px solid hsl(240, 2%, 13%)",
+                      color: "hsl(0, 0%, 84%)",
+                      fontSize: "13px",
+                      transition: "background 0.2s ease, color 0.2s ease",
                     }}
+                    onMouseEnter={e => { e.currentTarget.style.background = "hsl(240, 1%, 17%)"; e.currentTarget.style.color = "#14b8a6"; }}
+                    onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "hsl(0, 0%, 84%)"; }}
                     onClick={() => handleSelectOther(cat)}
                   >
                     {cat}
                   </li>
                 ))}
               {remainingCategories.length === 0 && (
-                <li style={{ padding: "6px 10px", color: "#666" }}>
+                <li style={{ padding: "8px 12px", color: "hsla(0, 0%, 84%, 0.7)", fontSize: "13px" }}>
                   There are no other categories
                 </li>
               )}

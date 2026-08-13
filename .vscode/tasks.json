@@ -2,9 +2,9 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "npm: dev",
+      "label": "npm: start",
       "type": "npm",
-      "script": "dev",
+      "script": "start",
       "isBackground": true,
       "problemMatcher": {
         "pattern": [

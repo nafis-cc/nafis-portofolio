@@ -37,4 +37,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: dist
-          branch: gh-pages
+          branch: prod
+          commit-message: "deploy: built files [skip ci]"

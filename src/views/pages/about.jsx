@@ -11,17 +11,14 @@ function About() {
           <h2 className="h2 article-title">About Me</h2>
           <section className="about-text">
             <p>
-              Nafis is an efficient and fast learner who adapts easily to new work environments. He
-              has a high curiosity and critical thinking so he is fully committed to always seeking
-              innovation and trying his best to solve a problem.
-            </p>
-            <p>
-              My role is to design and develop software that is not only highly functional and
-              user-friendly, but also visually appealing. I strive to add a distinctive personal
-              touch to every product, ensuring it is both engaging and effortless to use. My goal is
-              to effectively convey your brand’s message and identity in the most creative and
-              impactful way. I have had the privilege of creating software solutions for several
-              well-known brand companies.
+              I’m Muhammad Nafis, an IT Digital Consultant and software developer with a degree in
+              Information Systems. I’ve contributed to digital transformation at the Ministry of
+              Finance of Indonesia and currently build enterprise software at PT Kalimantan Prima
+              Persada — giving me direct experience across government and industry scale. I
+              specialize in web, mobile, and desktop applications that are functional, visually
+              polished, and built around real user needs. I approach every project with curiosity
+              and precision, delivering software that is both effortless to use and genuinely
+              impactful for the people and organizations behind it.
             </p>
           </section>
 

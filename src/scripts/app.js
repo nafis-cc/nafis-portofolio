@@ -1,5 +1,9 @@
 'use strict';
 
+export const handleOpenNafisPortofolio = () => {
+  window.location.href = "https://www.nafis.cc";
+};
+
 export const handleOpenLinkedin = () => {
   const url = "https://www.linkedin.com/in/nafiss";
   window.open(url, "_blank");

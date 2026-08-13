@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /no-touchy
+Sitemap: https://www.nafis.cc/sitemap_index.xml

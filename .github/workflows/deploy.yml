@@ -17,7 +17,6 @@ concurrency:
 
 jobs:
   build:
-    if: github.ref == 'refs/heads/prod'
     runs-on: ubuntu-latest
 
     steps:
@@ -40,21 +39,12 @@ jobs:
           VITE_EMAILJS_TEMPLATE_ID: ${{ secrets.VITE_EMAILJS_TEMPLATE_ID }}
           VITE_EMAILJS_PUBLIC_KEY: ${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}
 
-      # Tambahkan CNAME
-      - name: Add CNAME file
-        run: echo "www.nafis.cc" > ./dist/CNAME
-
-      # Tambahkan 404.html fallback
-      - name: Add 404.html
-        run: cp ./dist/index.html ./dist/404.html
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
 
   deploy:
-    if: github.ref == 'refs/heads/prod'
     needs: build
     runs-on: ubuntu-latest
     environment:

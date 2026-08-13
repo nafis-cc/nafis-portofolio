@@ -97,7 +97,18 @@ function Project() {
                   <div className="blog-item-icon-box">
                     <FaSearch />
                   </div>
-                  <img src={item.image} alt={item.title} loading="lazy" />
+                  {item.image ? (
+                    <img src={item.image} alt={item.title} loading="lazy" />
+                  ) : (
+                    <div className="blog-banner-iframe-wrapper">
+                      <iframe
+                        src={item.link}
+                        title={item.title}
+                        className="blog-banner-iframe"
+                        tabIndex={-1}
+                      />
+                    </div>
+                  )}
                 </figure>
                 <div className="blog-content">
                   <div className="blog-meta">

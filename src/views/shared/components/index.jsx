@@ -1,5 +1,4 @@
 export { default as Aside } from "./aside";
-export { default as Navbar } from "./navbar";
 export { default as Service } from "./service";
 export { default as Review } from "./review";
 export { default as Client } from "./client";

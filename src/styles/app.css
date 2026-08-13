@@ -777,7 +777,7 @@ main {
   margin-bottom: 25px;
 }
 
-.timeline .btn-resume {
+.btn-resume {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -791,7 +791,8 @@ main {
   font-weight: var(--fw-500);
   background: transparent;
   box-shadow: none;
-  margin-bottom: 16px;
+  margin-top: 4px;
+  margin-bottom: 20px;
   transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease;
 }
 
